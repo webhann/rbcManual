@@ -1,0 +1,15 @@
+* {
+  max-width: 100%;
+}
+p, a, span, li, dt, dd {
+  font-size: 1.2rem;
+}
+.container {
+  padding: 40px;
+}
+.title {
+  margin-bottom: 24px;
+}
+.body {
+  line-height: 2;
+}
