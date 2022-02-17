@@ -1,8 +1,3 @@
-const path = require('path')
-require(`dotenv`).config({
-  path:`.env.${process.env.NODE_ENV}`
-})
-
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 module.exports = {
