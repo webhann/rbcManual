@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: process.env.API_KEY,
+        apiKey: "eaf8ef3ab6504505af1123e4d3c27c8ddd5c",
         serviceId: 'adminrbcmanual',
         apis: [
           {
