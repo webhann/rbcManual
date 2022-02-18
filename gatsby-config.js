@@ -1,3 +1,8 @@
+const path = require('path')
+require(`dotenv`).config({
+  path:`.env.${process.env.NODE_ENV}`
+})
+
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 module.exports = {
@@ -49,7 +54,7 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: "eaf8ef3ab6504505af1123e4d3c27c8ddd5c",
+        apiKey: process.env.API_KEY,
         serviceId: 'adminrbcmanual',
         apis: [
           {

@@ -6,11 +6,14 @@ import "../styles/style.css"
 
 const IndexPage = ({ data }) => (
   <Layout className="container">
-    <Seo title="Manuals" />
+    <Seo title="マニュアル一覧" />
+    <div className="mb-5">
+      <Link to="/">トップページに戻る</Link>
+    </div>
     <div className="title">
       <h1>マニュアル一覧</h1>
     </div>
-    <div className="body">
+    <div className="body mb-5">
       <ul>
         {data.allMicrocmsContents.edges.map(({ node }) => (
           <li key={node.id}>
@@ -19,6 +22,7 @@ const IndexPage = ({ data }) => (
         ))}
       </ul>
     </div>
+    <Link to="/">トップページに戻る</Link>
   </Layout>
 )
 
