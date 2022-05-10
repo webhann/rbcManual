@@ -25,3 +25,11 @@ img {
 .mb-5 {
   margin-bottom: 5rem;
 }
+h2 {
+  margin-top: 80px;
+  border-bottom: 1px solid;
+}
+h3 {
+  margin-top: 40px;
+  border-left: 24px solid;
+}
