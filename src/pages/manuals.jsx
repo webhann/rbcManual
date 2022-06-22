@@ -4,45 +4,9 @@ import Layout from "@lekoarts/gatsby-theme-cara/src/components/layout"
 import Seo from "@lekoarts/gatsby-theme-cara/src/components/seo"
 import "../styles/style.css"
 
-let manuCommon, manuNews, manuRadio, manuTv, manuEisui, manuWeb
-
-const sortedPosts = [
-  {
-    objArr: manuCommon,
-    cateName: "共通",
-  },
-  {
-    objArr: manuNews,
-    cateName: "ニュース",
-  },
-  {
-    objArr: manuRadio,
-    cateName: "ラジオ",
-  },
-  {
-    objArr: manuTv,
-    cateName: "テレビ",
-  },
-  {
-    objArr: manuEisui,
-    cateName: "営業推進",
-  },
-  {
-    objArr: manuWeb,
-    cateName: "Web",
-  },
-]
-
 const IndexPage = ({ data }) => {
-  let sortPost = (i) =>{data.allMicrocmsContents.edges.filter(edge => {
-    return edge.node.category.ctegory.includes(sortedPosts[i].cateName);
-  })}
-  sortedPosts.map((post, i) => {
-    post = sortPost(i)
-    console.log(post)
-  })
-  sortedPosts[0].objArr = data.allMicrocmsContents.edges.filter(edge => {
-    return edge.node.category.ctegory.includes(sortedPosts[0].cateName);
+  const manuCommon = data.allMicrocmsContents.edges.filter(edge => {
+    return edge.node.category.ctegory.includes('共通');
   })
   const manuNews = data.allMicrocmsContents.edges.filter(edge => {
     return edge.node.category.ctegory.includes('ニュース');
@@ -71,10 +35,10 @@ const IndexPage = ({ data }) => {
       <h2 className="mb-2">共通</h2>
       <div className="body mb-5">
         <ul>
-          {sortedPosts[0].objArr.map(({ node }) => (
+          {manuCommon.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
@@ -85,7 +49,7 @@ const IndexPage = ({ data }) => {
           {manuNews.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
@@ -96,7 +60,7 @@ const IndexPage = ({ data }) => {
           {manuRadio.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
@@ -107,7 +71,7 @@ const IndexPage = ({ data }) => {
           {manuTv.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
@@ -118,7 +82,7 @@ const IndexPage = ({ data }) => {
           {manuEisui.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
@@ -129,7 +93,7 @@ const IndexPage = ({ data }) => {
           {manuWeb.map(({ node }) => (
             <li key={node.id} style={{lineHeight:1.5}}>
               <Link to={`/contents/${node.id}`}>{node.title}</Link>
-              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}</p>
+              <p style={{marginTop:0, fontSize:"80%"}}>{node.updatedAt}更新</p>
             </li>
           ))}
         </ul>
