@@ -13,7 +13,7 @@ img {
 }
 .main {
   padding: 24px;
-  background: #f6f6f6;
+  background: #ffffff;
 }
 .title {
   margin-bottom: 24px;
@@ -26,6 +26,18 @@ img {
 }
 h1 {
   color: #002eb7;
+  position: relative;
+  margin-bottom: 80px;
+}
+h1:before {
+  position: absolute;
+  left: -8%;
+  content: '';
+  display: inline-block;
+  border-bottom: 4px solid;
+  width: 108%;
+  height: 100%;
+  z-index: -1;
 }
 h2 {
   margin-top: 80px;
